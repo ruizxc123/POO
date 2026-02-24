@@ -1,11 +1,11 @@
 class ContaBancaria:
-    def __init__(self, titular:str, saldo: float, agencia, numero_conta: int, historico):
+    def __init__(self, titular:str, saldo: float, agencia, numero_conta: int):
         self.titular = titular
         self.__saldo = saldo
         self.__agencia = agencia
         self.__numero_conta = numero_conta
         self.__limite = 500
-        self.__historico = historico
+        self.__historico = []
         
 
     def get_saldo(self):
@@ -20,6 +20,9 @@ class ContaBancaria:
     def get_numero_conta(self):
         return self.__numero_conta
     
+    def get_historico(self):
+        return self.__historico
+
 
     def depositar(self, valor):
         if valor > 0:
@@ -29,6 +32,8 @@ class ContaBancaria:
             return True
         else:
             print("Valor inválido!")
+            return False
+            
 
     def sacar(self, valor):
         if ((self.__saldo + self.__limite ) or ((self.__saldo - self.__limite) >= 0))  <= valor:
@@ -38,16 +43,18 @@ class ContaBancaria:
         else:   
             return False
     
+    
     def transferir(self, valor, conta_destino):
-        if self.__saldo < valor:
+        if self.sacar(valor) == False:
             print("Saldo insuficiente para transferência!")
             return False
         else:
-            self.__saldo -= valor
             conta_destino.depositar(valor)
             self.__historico.append(f'Transferência de R$ : {valor:.2f} para {conta_destino.titular}')
             print(f"Transferência de {valor:.2f} realizada com sucesso!")
             return True
+        
+        
         
     def exibir_dados(self):
         print('Nome do titular : ', self.titular)
