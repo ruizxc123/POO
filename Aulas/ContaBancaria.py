@@ -80,3 +80,67 @@ class ContaBancaria:
         else:
             print("Nenhuma operação realizada ainda.")
         print("================================")
+        
+'''class ContaBancaria:
+    def __init__(self, titular: str, saldo: float, agencia: str, numero_conta: str, limite = 500):
+        self.titular = titular
+        self.__saldo = saldo
+        self.__agencia = agencia
+        self.__limite = limite
+        self.__numero_conta = numero_conta
+        self.__historico = []        
+  
+
+    def get_saldo(self):
+        return self.__saldo
+
+    def get_agencia(self):
+        return self.__agencia
+
+    def get_numero_conta(self):
+        return self.__numero_conta
+
+    def get_limite(self):
+        return self.__limite
+
+    def depositar(self, valor):
+        if valor > 0:
+            self.__saldo += valor
+            print(f"O valor de {valor} foi depositado na conta!")
+            return True
+        else:
+            print("Valor inválido!")
+
+    def sacar(self, valor):
+        if valor > 0 and valor <= self.__saldo + self.__limite:
+            self.__saldo -= valor
+            return True
+        else:
+            return False
+
+
+    def transferir(self, valor, conta_destino):
+        if self.sacar(valor):
+            conta_destino.depositar(valor)
+            self.__historico.append(f"Transferência de {valor} para {conta_destino.titular}")
+            return True
+        return False
+    
+    def  exibir_dados(self) :
+        print("\n\nTitular: ", self.titular)
+        print("Saldo: ", self.get_saldo())
+        print("Conta: ", self.get_numero_conta())
+        print("Ag: ", self.get_agencia())
+        print("Limite: ", self.get_limite())
+    
+    def exibir_historico(self):
+        for transferencia in self.__historico:
+            print("-", transferencia)
+            
+    def alterar_limite(self, novo_limite):
+        if novo_limite > 0:
+            print("Novo limite -> ", novo_limite)
+            self.__limite = novo_limite
+            return True
+        return False
+    '''

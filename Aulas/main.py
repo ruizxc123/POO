@@ -93,3 +93,25 @@ def main():
         print('\n' ,samuel.exibir_historico())
         
 main()
+'''from ContaBancaria import ContaBancaria
+
+def main():
+    print("Bem vindo ao Banco  Palmas")
+    contaSamuel = ContaBancaria("Samuel", 1000,2323, 434 )
+    contaPedro = ContaBancaria("Pedro", 500, 3434, 123213)
+    
+    print("Saldo Samuel:", contaSamuel.get_saldo())
+    print("Saldo: Pedro", contaPedro.get_saldo())
+    
+    contaSamuel.transferir(600, contaPedro)
+    contaPedro.alterar_limite(900)
+    
+    print("Após transferir! ")
+    print("Saldo Pedro:", contaPedro.get_saldo())
+    print("Saldo Samuel:", contaSamuel.get_saldo())
+    
+    contaPedro.exibir_dados()
+    
+    contaSamuel.exibir_historico()
+    
+main() '''
