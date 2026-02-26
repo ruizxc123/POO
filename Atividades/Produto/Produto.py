@@ -30,7 +30,7 @@ class Produto:
     
     
     def vender_produto(self, qtd):
-        if qtd > 0:
+        if self.estoque >= qtd:
             self.estoque -= qtd
 
             return True

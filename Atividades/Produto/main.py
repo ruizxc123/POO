@@ -1,22 +1,35 @@
 from Produto import Produto
 from ProdutoFisico import ProdutoFisico
 from ProdutoDigital import ProdutoDigital
+from Pedido import Pedido
+
 
 def main():
-        Produto1 = Produto('Camisa', 50.00, 5, 111)
+        
         Produto2 = ProdutoFisico('Tenis', 25.00, 8, 222, 10, 10)
-        Produto3 = ProdutoDigital('celular', 100.00, 5, 333, 100, 'MB')
-    
-        Produto1.exibir_dados()
-        Produto2.exibir_dados() 
-        Produto3.exibir_dados()
-    
-        if Produto1.vender_produto(2):
-            print(f'\nEstoque atualizado do produto: {Produto1.estoque} Nome do produto {Produto1.nome}')
-        else:
-            print('Valor invalido')
-            
-        if Produto2.vender_produto(-3):
+        Produto3 = ProdutoDigital('celular', 100.00, 0, 333, 100, 'MB')
+        
+        Produto4 = ProdutoFisico('Camiseta', 50.00, 20, 444, 5, 5)
+        Produto5 = ProdutoDigital('Calça', 80.00, 0, 555, 200, 'MB')
+        
+        
+        Pedido1 = Pedido(1)
+        Pedido1.adicionar_produtos(Produto2, 2)
+        Pedido1.adicionar_produtos(Produto3, 10)
+        Pedido1.exibir_resumo()
+        
+        Pedido2 = Pedido(2)
+        Pedido2.adicionar_produtos(Produto2, 3)
+        Pedido2.adicionar_produtos(Produto4, 5)
+        Pedido2.adicionar_produtos(Produto5, 3)
+        Pedido1.exibir_resumo()
+        
+        Pedido2.exibir_resumo()
+        '''Produto2.exibir_dados() 
+        Produto3.exibir_dados()'''
+        
+          
+        '''if Produto2.vender_produto(5):
             print(f'\nEstoque atualizado do produto: {Produto2.estoque} Nome do produto {Produto2.nome}')
         else:
             print('Valor invalido')
@@ -36,5 +49,5 @@ def main():
         else:
             print('Valor invalido')
     
-        Produto3.gerar_link_download()
+        Produto3.gerar_link_download()'''
 main()
