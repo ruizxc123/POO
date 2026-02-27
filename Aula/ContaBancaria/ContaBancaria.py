@@ -36,7 +36,7 @@ class ContaBancaria:
             
 
     def sacar(self, valor):
-        if ((self.__saldo + self.__limite ) or ((self.__saldo - self.__limite) >= 0))  <= valor:
+        if (self.__saldo + self.__limite )  <= valor:
             self.__saldo -= valor
             self.__historico.append(f'Saque : R${valor:.2f}')
             return True
