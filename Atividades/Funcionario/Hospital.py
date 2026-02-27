@@ -11,3 +11,8 @@ class Hospital:
             
     def folha_pagamento(self):
         return sum(f.salario_total() for f in self.lista_funcionarios)
+    
+    def maior_salario(self):
+        return max(self.lista_funcionarios)
+    
+    
