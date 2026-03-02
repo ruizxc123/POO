@@ -11,8 +11,10 @@ class Enfermeiro(FuncionarioSaude):
         return False
     
     def descricao_funcao(self):
-        return print(f'Setor do enfermeiro(a): {self.setor}')
-    
+        if self.ativo:
+            return print(f'Setor do enfermeiro(a): {self.setor}')
+        return False
+        
     def exibir_dados(self):
         super().exibir_dados()
         print('Setor:', self.setor)

@@ -25,9 +25,15 @@ class Funcionario(ABC):
             return True
         
     def salario_total(self):
-        return self.salario + self.cacular_bonus()
+        if self.ativo and self.salario > 0:
+            return self.salario + self.cacular_bonus()
+        print('Nenhum valor atribuido ao salário ou funcionário inativo.')
+        return False
     
     def exibir_dados(self):
+        if not self.ativo:
+            print(f'Funcionário {self.nome} está inativo.')
+            return
         print('\n----Dados-----')
         print("Nome: ", self.nome)
         print("Registro: ", self.resgistro)

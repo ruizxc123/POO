@@ -11,7 +11,9 @@ class Administrativo(Funcionario):
         return False
     
     def descricao_funcao(self):
-        return print(f'Departamento do Administrativo {self.nome} é {self.departamento}')
+        if self.ativo:
+            return print(f'Departamento do Administrativo {self.nome} é {self.departamento}')
+        return False
     
     def exibir_dados(self):
         super().exibir_dados()

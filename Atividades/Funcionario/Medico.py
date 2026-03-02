@@ -12,7 +12,9 @@ class Medico(FuncionarioSaude):
         return False
     
     def descricao_funcao(self):
-        return print(f'Função do médico: {self.especialidade}')
+        if self.ativo:
+            return print(f'Função do médico: {self.especialidade}')
+        return False
     
     def exibir_dados(self):
         super().exibir_dados()

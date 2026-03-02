@@ -6,6 +6,8 @@ class Hospital:
         self.lista_funcionarios.append((funcionario))
     
     def listar_funcionarios(self):
+        if not self.lista_funcionarios:
+            return
         for f in self.lista_funcionarios:
             f.exibir_dados()
             

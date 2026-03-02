@@ -41,5 +41,7 @@ def main():
     print('\n')
     print(funcionario1.desativar())
     print(funcionario1.exibir_dados)
+    print('\n')
+    funcionario4.validar_registro()
     
 main()
