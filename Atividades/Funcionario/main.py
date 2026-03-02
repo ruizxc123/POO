@@ -35,6 +35,10 @@ def main():
     Hospital2.listar_funcionarios()
     print('\n')
     print('Valor total da folha de pagamento: ', Hospital2.folha_pagamento())
-    
+    print('Maior salario: ', Hospital1.maior_salario(), 'Nome: ', funcionario1.nome)
+    print('Maior salario: ', Hospital2.maior_salario(), 'Nome: ', funcionario4.nome)
+    print('\n')
+    print(funcionario1.desativar())
+    print(funcionario1.exibir_dados)
     
 main()

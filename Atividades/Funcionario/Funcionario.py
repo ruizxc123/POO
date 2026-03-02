@@ -32,9 +32,11 @@ class Funcionario(ABC):
         print("Registro: ", self.resgistro)
         print("Salário: ", self.salario)
     
-    def desativar(self, demitir):
-        if self.ativo == True :
-            self.ativo = demitir
+    def desativar(self):
+        if self.ativo:
+            self.ativo = False
+            print(f'Funcionário {self.nome} desativado.')
             return True
         else:
+            print(f'Funcionário {self.nome} já está inativo!.')
             return False
