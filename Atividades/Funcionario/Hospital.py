@@ -10,9 +10,13 @@ class Hospital:
             f.exibir_dados()
             
     def folha_pagamento(self):
+        if not self.lista_funcionarios:
+            return 
         return sum(f.salario_total() for f in self.lista_funcionarios)
     
     def maior_salario(self):
-        return max(f.salario_total() for f in self.lista_funcionarios)
-    
+        if not self.lista_funcionarios:
+            return 
+        funcionario = max(self.lista_funcionarios, key=lambda f: f.salario_total())
+        return f'Nome do funcionário : {funcionario.nome}, Salário total: {funcionario.salario_total()}'
     

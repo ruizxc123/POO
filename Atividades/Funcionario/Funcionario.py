@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+import math
 
 class Funcionario(ABC):
     
@@ -20,7 +21,7 @@ class Funcionario(ABC):
         if porcetagem_salario <= 0 and self.ativo == False:
             return False
         else:
-            self.salario = self.salario * porcetagem_salario        
+            self.salario = (self.salario * (porcetagem_salario/100)) + self.salario
             return True
         
     def salario_total(self):
@@ -31,6 +32,7 @@ class Funcionario(ABC):
         print("Nome: ", self.nome)
         print("Registro: ", self.resgistro)
         print("Salário: ", self.salario)
+        print("Status: ", "Ativo" if self.ativo else "Inativo")
     
     def desativar(self):
         if self.ativo:
