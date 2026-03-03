@@ -17,6 +17,10 @@ class Funcionario(ABC):
     def descricao_funcao(self):
         pass
     
+    @abstractmethod
+    def verificacao(self):
+        pass
+    
     def aumentar_salario(self, porcetagem_salario):
         if porcetagem_salario <= 0 and self.ativo == False:
             return False

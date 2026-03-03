@@ -6,14 +6,19 @@ class Administrativo(Funcionario):
         self.departamento = departamento
         
     def cacular_bonus(self):
-        if self.salario > 0 and self.ativo:
+        if self.salario > 0 and self.verificacao:
             return self.salario * (10/100)
         return False
     
     def descricao_funcao(self):
-        if self.ativo:
+        if self.verificacao:
             return print(f'Departamento do Administrativo {self.nome} é {self.departamento}')
         return False
+    
+    def verificacao(self):
+        if self.ativo:
+            return True
+        return False 
     
     def exibir_dados(self):
         super().exibir_dados()
