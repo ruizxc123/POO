@@ -7,16 +7,16 @@ class Medico(FuncionarioSaude):
         self.especialidade = especialidade
         
     def cacular_bonus(self):
-        if self.salario > 0 and self.verificacao:
+        if self.salario > 0 and self.verificacao_conta:
             return self.salario * (20/100)
         return False
     
     def descricao_funcao(self):
-        if self.verificacao:
+        if self.verificacao_conta:
             return print(f'Função do médico: {self.especialidade}')
         return False
     
-    def verificacao(self):
+    def verificacao_conta(self):
         if self.ativo:
             return True
         return False

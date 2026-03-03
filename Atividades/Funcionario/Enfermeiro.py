@@ -6,16 +6,16 @@ class Enfermeiro(FuncionarioSaude):
         self.setor = setor
         
     def cacular_bonus(self):
-        if self.salario > 0 and self.verificacao:
+        if self.salario > 0 and self.verificacao_conta:
             return self.salario * (15/100)
         return False
     
     def descricao_funcao(self):
-        if self.verificacao:
+        if self.verificacao_conta:
             return print(f'Setor do enfermeiro(a): {self.setor}')
         return False
     
-    def verificacao(self):
+    def verificacao_conta(self):
         if self.ativo:
             return True
         return False

@@ -18,7 +18,8 @@ class Funcionario(ABC):
         pass
     
     @abstractmethod
-    def verificacao(self):
+    def verificacao_conta(self):
+        
         pass
     
     def aumentar_salario(self, porcetagem_salario):
